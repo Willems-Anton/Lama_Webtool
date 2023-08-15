@@ -1,0 +1,153 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anton Willems">
+    <meta name="copyright" content="Thomas more, VIB, Anton Willems">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyworkds" content="Metabolomics, Mass Spectrometry, technology, isotopes, HPLC, metabolites">
+    <meta name="description" content="Tools for the metabolomocs core facility. This website and it's accompanying tools can be used for data analysis of metabolomics data. The isotopue correction tool corrects for natural abundances of specific elements in your analysis.">
+    <title>MS Lab: Laboratory of Applied Mass Spectrometry</title>
+    <link rel="shortcut icon" href="Mec.png">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3c2901058f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="Mec.png">MS Lab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Logbook.html">Logbook</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="IsotopeCalculation.html">Isotopologue Calculation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="NaturalAbundanceCalculator.html">Isotope Correction Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MetaboliteLibrary.html">Metabolite library</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<header>
+ 
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-4">MS Lab: Isotope Correction Tool</h1>
+    </div>
+  </div>
+</header>
+    <main>
+      <div class="container text-center">
+        <div class="row">
+            <p>The Isotope Correction Tool is an in-house software package that corrects raw abundances for the natural abundance of heavy isotopes of elements.
+            <br> As an output an excel file with four tabs is created (RawAbundance, CorrectedIsotopologues, FractionalContribution and RawIntensity).           
+            </p>
+            <p>For now the buttons below are not yet functional, this feature will be added further in the educational program.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <p>In the meantime an <a href="mailto:anton.willems@student.thomasmore.be">email</a> containing the raw data can be sent to the developer. When the calculations are finished, a reply will be sent to you with the corrected file.</p>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <h2>How it works:</h2>
+          <div class="col-md-4">
+            <div class="row">
+              <picture>
+                <img class="img-fluid nac-img" src="spectrum.jpg" alt=" example of a mass spectrum" width="100%" height="auto">
+              </picture>
+            </div>
+            <div class="row">
+              <p>The mass spectrometer measures compounds as an electric signal, this signal is visualized as a peak in a spectrum. The software detects these peaks and measure their height and assigns a molecular formula to each one depending on the mass off the peak.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <p> Each element is this molecular formula will have a stable isotope that also exists in nature. Since we are not looking at nature but at our experimental conditions,
+                we want to correct the peak height for the natural abundance of each element.. 
+              </p>
+            </div>
+            <div class="row"> 
+              <p>
+              <i class="fa-solid fa-arrow-right fa-2xl"></i>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <picture>
+                <img class="img-fluid nac-img" src="excel.jpg" alt=" example of a mass spectrum" width="100%" height="auto">
+              </picture>
+            <div class="row">
+              <p>
+                As a result we get an excel file with four tabs: Raw Abundance, Corrected isotopologues, fractional contribution and raw intensity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h2>Raw Abundance</h2>
+            <p>In the world of mass spectrometry, raw abundance serves as the foundational data point for isotopic analysis. As molecules are ionized and subjected to mass spectrometric analysis, the resulting signals are converted into peaks on a mass spectrum. These peaks represent different isotopic variants of the same molecule. For example, carbon, hydrogen, and oxygen isotopes can vary, leading to different peaks for each isotopic combination. Raw abundance reflects the intensity of these peaks, providing information about the presence and relative quantities of isotopes. Researchers use raw abundance to calculate isotopic ratios, which offer insights into molecular origins, metabolic pathways, and structural information.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h2>Corrected Isotopologues</h2>
+            <p>While raw abundance is the initial measurement, the real challenge lies in extracting accurate information from noisy data. This is where corrected isotopologues come into play. Instrumental noise, background interference, and overlapping signals from other molecules can distort the raw abundance data. Corrected isotopologues involve sophisticated data processing techniques that remove noise and enhance the precision of the measurement. By refining the data, researchers gain a clearer understanding of the isotopic distribution, allowing them to distinguish genuine signals from artifacts. Corrected isotopologues enable researchers to confidently identify specific isotopic patterns and make informed decisions about metabolite origins and pathways.</p>
+          </div>
+          <div class="col-6">
+            <h2>Fractional Contribution</h2>
+            <p>Fractional contribution takes isotopic analysis a step further by providing insights into the relative proportions of isotopes within a molecule. For instance, when studying a metabolite, understanding how much of the molecule contains each isotopic variant is crucial. This information can shed light on metabolic reactions, biosynthetic pathways, and even sources of substrates. Fractional contribution analysis helps researchers discern whether a specific isotope is preferentially incorporated into a molecule during biosynthesis or if certain metabolic processes influence isotopic ratios. By quantifying the fractional contribution of each isotopic variant, scientists can paint a detailed picture of how molecules are formed, modified, and utilized within biological systems.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h2>Raw Intensity</h2>
+            <p>In the realm of mass spectrometry, raw intensity serves as a fundamental measurement that unveils the intricacies of molecules and their isotopic compositions. This critical concept contributes to the understanding of molecular structures, metabolic pathways, and the identification of compounds within complex biological samples.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </main>
+    <footer class="footer py-3">
+        <div class="container text-center">
+          <a href="mailto:anton.willems@student.thomasmore.be">Click to send a mail to the developer of the site.</a>
+          <p>© 2023 Thomas More, VIB, Anton Willems. All rights reserved.</p>
+        </div>
+      </footer>
+    
+      
+      
+    </body>
+    
+    </html>

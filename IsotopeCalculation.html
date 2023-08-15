@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anton Willems">
+    <meta name="copyright" content="Thomas more, VIB, Anton Willems">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyworkds" content="Metabolomics, Mass Spectrometry, technology, isotopes, HPLC, metabolites, isotopologues, calculations">
+    <meta name="description" content="Tools for the metabolomocs core facility. This website and it's accompanying tools can be used for data analysis of metabolomics data. The Isotopologue calculator explains how to calculate the masses of different isotopologues of a compound.">
+    <title>MS Lab: Laboratory of Applied Mass Spectrometry</title>
+    <link rel="shortcut icon" href="Mec.png">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="Mec.png">MS Lab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Logbook.html">Logbook</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="IsotopeCalculation.html">Isotopologue Calculation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="NaturalAbundanceCalculator.html">Isotope Correction Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MetaboliteLibrary.html">Metabolite library</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<header>
+ 
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-4">MS Lab: Isotopologue Calculation</h1>
+    </div>
+  </div>
+</header>
+<main>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>The importance of exact masses:</h1>
+      </div>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-3">
+        
+        <h2>Identification</h2>
+       
+          <p>Exact mass measurements can help identify the molecular formula of an unknown compound. The unique mass of a molecule provides valuable information about its elemental composition. By comparing the experimental exact mass with the calculated masses of potential molecular formulas, scientists can determine the most likely identity of the compound.</p>
+      </div>
+      <div class="col-12 col-md-3">
+        <h2>Isotope pattern Analysis</h2>
+          <p>Mass spectrometry can provide information about the distribution of isotopes within a molecule. Accurate measurement of the exact mass helps in analyzing isotopic patterns and determining the presence of specific isotopes. Isotope patterns can be used to confirm the molecular formula and to differentiate between different compounds.</p>
+      </div>
+      <div class="col-12 col-md-3">
+        <h2>High resolution analysis</h2>
+          <p>Mass spectrometers with high resolving power can distinguish closely related compounds with similar nominal masses. The exact mass measurement allows the differentiation of compounds with small mass differences, which is especially important in metabolomics, proteomics, and other fields where complex mixtures of molecules are analyzed.</p>
+      </div>
+      <div class="col-12 col-md-3">
+        <h2>Structural elucidation</h2>
+          <p>In addition to the exact mass, the fragmentation pattern obtained from tandem mass spectrometry (MS/MS) experiments provides information about the structure of the molecule. By analyzing the exact masses of fragment ions, researchers can deduce the connectivity of atoms and determine the structure of the original compound.</p>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1> How to calculate the exact mass:</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 text-center">
+          <p>
+            Obtain the molecular formula: As before, determine the molecular formula of the charged, protonated, or deprotonated molecule.
+            Find the atomic masses: Refer to the periodic table to find the atomic masses of each element in the molecule, including their heavy isotopes if applicable.
+            <br>
+            Adjust for charge:
+          </p>
+            <br>
+            <ul class="list">
+              <li>If the molecule is charged, determine the net charge (positive or negative) and the number of extra or missing electrons compared to a neutral molecule. Each extra electron contributes a mass of approximately 0.00054858 amu (the mass of one electron).</li>
+              <li>If the molecule is protonated (has gained a proton), you should add the mass of a proton (approximately 1.0073 amu) to the total mass.</li>
+              <li>If the molecule is deprotonated (has lost a proton), you should subtract the mass of a proton from the total mass.</li>
+            </ul>
+            <br>
+          </div>
+  
+      <div class="col-12 col-md-6 text-center">
+        <img class="img" src="Isotopes-1 (2).png" alt="Atomic weights of Isotopes" width="400" height="300" >
+        <p>Atomic weights of isotopes.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p>
+          Calculate the exact mass of each element: Multiply the number of atoms of each element in the molecular formula by their respective atomic masses (including heavy isotopes if present).
+          Sum up the exact masses: Add the exact masses of all the elements, including the adjustment for charge, to get the total exact mass of the charged, protonated, or deprotonated molecule.
+        </p>
+      </div>
+    </div>
+</div> 
+</main>
+
+
+
+
+<footer class="footer py-3">
+    <div class="container text-center">
+      <a href="mailto:anton.willems@student.thomasmore.be">Click to send a mail to the developer of the site.</a>
+      <p>© 2023 Thomas More, VIB, Anton Willems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+</body>
+
+</html>

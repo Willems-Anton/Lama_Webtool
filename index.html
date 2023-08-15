@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anton Willems">
+    <meta name="copyright" content="Thomas more, VIB, Anton Willems">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyworkds" content="Metabolomics, Mass Spectrometry, technology, isotopes, HPLC, metabolites">
+    <meta name="description" content="Tools for the metabolomocs core facility. This website and it's accompanying tools can be used for data analysis of metabolomics data. This websites includes tools for exact mass calculation, a retention time library, natural abundance correction and more to come in the future.">
+    <title>MS LAB: Laboratory of Applied Mass Spectrometry</title>
+    <link rel="shortcut icon" href="Mec.png">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3c2901058f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="Mec.png">MS Lab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Logbook.html">Logbook</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="IsotopeCalculation.html">Isotopologue Calculation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="NaturalAbundanceCalculator.html">Isotope Correction Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MetaboliteLibrary.html">Metabolite library</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <header>
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-4">MS Lab: Laboratory of applied mass spectrometry</h1>
+      <p class="lead">Toolbox overview</p>
+    </div>
+  </div>
+</header>
+
+
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <p>
+        A Metabolomics Core Facility is a specialized center of excellence at the forefront of modern biological research, dedicated to unraveling the intricate web of metabolic processes within living organisms. Operating as a nexus of advanced technology, scientific expertise, and collaboration, this facility plays a pivotal role in understanding the dynamic interplay of metabolites and their significance in health, disease, and beyond. 
+        </p><p> Equipped with cutting-edge mass spectrometers, chromatography systems, and computational tools, the facility offers researchers the means to comprehensively analyze and quantify an extensive array of metabolites. 
+        </p><p> From sample preparation to data interpretation, the facility's skilled personnel guide researchers through every step of the metabolomics journey, ensuring accuracy and reliability. In the realm of disease research, the facility's capabilities shine brightly as it assists in identifying metabolic biomarkers that hold immense promise for early detection, diagnosis, and treatment monitoring. 
+        </p><p> Through workshops, training programs, and collaborative initiatives, the Metabolomics Core Facility serves as an educational hub, empowering researchers with the knowledge and skills to harness the power of metabolomics in their studies. In essence, this facility is not just a space for experimentation, but a crucible where scientific innovation is forged, metabolite by metabolite, illuminating the intricate biochemical symphony that underpins life itself.
+      </p>
+    </div>
+  </div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-6 ">
+          <h3 class="text-center">Logbook </h3></div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6 " >
+                    <p> Holds the inventory of our -80 freezers. This includes all the samples received from our clients and the preparations that followed, the samples from the pHd students and our own internal projects.
+                    <br>The following format is used:
+                        <ol>
+                            <li> Date that the samples were received</li>
+                            <li> Project code</li>
+                            <li> Name of the client</li>
+                            <li> Amount of samples</li>
+                            <li> Name of employee that received the samples</li>
+                            <li> Location in freezer
+                                <ul>
+                                    <li>Minus 80 freezer location</li>
+                                    <li>Minus 20 freezer location</li>
+                                </ul>
+                            </li>
+                            <li> If they can be trashed after the agreed upon time in storage</li>
+                            <li> Comments</li>
+                        </ol>
+                    </p>
+             </div>
+             <div class="col-12 col-md-6">
+                <img src="vials.jpg" alt="vials containing samples" width="100%" height="auto">
+             </div>
+         </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-6">
+            <h3 class="text-center"> Isotopologue calculation</h3>
+              <p>on this page it is explained how to calculate the m/z values for each isotopologue with carbon, nitrogen or oxygen labelling. <br>
+                A second posibility is to calculate the exact mass starting from the chemical formla of the compound.
+              <br>Find the chemical formula Of the compound in question: <br>
+                If no heavy isotopes are present: CnHnOnNnSnPn...
+              <br> Only the elements that are present need to be filled in.
+              <br> If heavy isotopes are present:
+              <br> {13}Cn{15}Nn{18}On
+              <br>Where between curly brackets the amount of neutrons of the element need to be filled in.
+              </p>
+        </div>
+        <div class="col-12 col-md-6">       
+          <h3 class="text-center"> Isotope Correction Tool</h3>
+            <p> In the world of analytical chemistry and mass spectrometry, accurate quantification is crucial for obtaining reliable results. However, the presence of multiple isotopes for certain elements can introduce complexities that need to be accounted for. <br>
+               Fortunately, there is a powerful solution to this challenge - the Isotope Correction Tool.
+            <br>The Isotope Correction Tool is a cutting-edge software designed to correct raw abundances for the natural abundances of isotopes present in a sample. When performing mass spectrometry analysis, many elements exist as a mixture of isotopes, each with its specific mass and abundance. Failure to account for these variations can lead to inaccurate quantification, hindering research and affecting data-driven decisions.
+            <br> Traditional mass spectrometers typically report raw intensities without considering the contributions from different isotopes. This can lead to misinterpretations and potentially skewed results. The Isotope Correction Tool addresses this issue by utilizing a robust algorithm that accurately quantifies each isotope's contribution and applies corrections to the raw abundances.
+            <br> Using the tool, an el-maven output file with raw abundances can be uploaded. The tracer purity must be provided and Dolly will return an excel file with the raw abundances corrected for the natural abundance and a seperate tab for the fractional contribution.           
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+<div class="col-12 col-md-6"></div>
+<div class="col-12 col-md-6"><h3 class="text-center"> Metabolite Library</h3></div>
+<div class="row">
+      <div class="col-12 col-md-6">
+        <img src="structure.jpg" alt="depiction of a chemical structure" width="100%" height="auto">
+      </div>
+          <div class="col-12 col-md-6">
+            
+              
+              <p>Introducing the cutting-edge Metabolite Library with different retention times for various platforms, a powerful resource for researchers seeking to unravel the complexities of metabolism.
+                  Metabolite identification is a fundamental aspect of metabolomics research. One crucial characteristic for metabolite identification is the retention time, which refers to the time a metabolite takes to pass through a chromatography system. Retention times are influenced by the specific analytical platform used, such as gas chromatography-mass spectrometry (GC-MS), liquid chromatography-mass spectrometry (LC-MS), or capillary electrophoresis-mass spectrometry (CE-MS).
+              </p>In the past, metabolite libraries often focused on a single analytical platform, limiting their utility across different analytical techniques. However, the Metabolite Library with different retention times for various platforms addresses this limitation and revolutionizes metabolomics research.
+              </p>
+              <p>This library consists out of all the metabolites that the facility has measured containing information about retention times on all different platforms and methods</p>
+          </div>
+        </div>
+      </div>
+   
+      </main>
+
+  
+  <footer class="footer py-3">
+    <div class="container text-center">
+      <a href="mailto:anton.willems@student.thomasmore.be">Click to send a mail to the developer of the site.</a>
+      <p>© 2023 Thomas More, VIB, Anton Willems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+  
+</body>
+
+</html>
+
+
